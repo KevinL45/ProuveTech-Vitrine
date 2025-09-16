@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProuveTech</title>
+    <link rel="stylesheet" href="prouvetech-landing.css" />
+</head>
+<body>
+    <!-- Fond dynamique animé -->
+    <div class="dynamic-bg">
+        <div class="floating-shape shape1"></div>
+        <div class="floating-shape shape2"></div>
+        <div class="floating-shape shape3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">ProuveTech</div>
+            <a href="#inscription" class="cta-nav">Devenir Bêta-Testeur</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">Pour les développeurs & recruteurs IT</span>
+            <h1>Un CV liste tes compétences, une demo prouve ta vraie valeur </h1>
+            <p class="subtitle">
+                ProuveTech crée le pont entre développeurs et recruteurs. 
+                Montrez vos projets, pas juste votre CV.
+            </p>
+            <div class="cta-container">
+                <a href="#inscription" class="cta-primary">Rejoindre la Bêta</a>
+                <a href="#video-demo" class="cta-secondary">Voir la Démo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section" id="video-demo">
+        <div class="video-container">
+            <div class="video-content">
+                <div class="video-text">
+                    <h2 class="video-title">Découvrez ProuveTech !</h2>
+                    <p class="video-subtitle">
+                        3 minutes pour comprendre la nouvelle plateforme.
+                    </p>
+                    <div class="video-features">
+                        <div class="video-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Présentations vidéo</span>
+                        </div>
+                        <div class="video-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Interface intuitive et moderne</span>
+                        </div>
+                        <div class="video-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Matching intelligent développeur-recruteur</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-wrapper">
+                    <div class="video-frame">
+                        <div class="video-placeholder" id="videoPlayer">
+                            <div class="play-button" onclick="playVideo()">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <circle cx="40" cy="40" r="40" fill="white" fill-opacity="0.95"/>
+                                    <path d="M32 25L55 40L32 55V25Z" fill="url(#playGradient)"/>
+                                    <defs>
+                                        <linearGradient id="playGradient" x1="32" y1="25" x2="55" y2="55">
+                                            <stop stop-color="#3b82f6"/>
+                                            <stop offset="1" stop-color="#1e3a8a"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="video-thumbnail">
+                                <div class="thumbnail-overlay"></div>
+                                <div class="thumbnail-content">
+                                    <div class="demo-screen">
+                                        <div class="demo-header">
+                                            <span class="demo-logo">ProuveTech</span>
+                                            <!-- <div class="demo-nav">
+                                                <span>Talents</span>
+                                                <span>Projets</span>
+                                            </div> -->
+                                        </div>
+                                        <div class="demo-grid">
+                                            <div class="demo-card">
+                                                <div class="demo-video-icon">▶</div>
+                                                <div class="demo-info">
+                                                    <div class="demo-name"></div>
+                                                    <div class="demo-tech"></div>
+                                                </div>
+                                            </div>
+                                            <div class="demo-card">
+                                                <div class="demo-video-icon">▶</div>
+                                                <div class="demo-info">
+                                                    <div class="demo-name"></div>
+                                                    <div class="demo-tech"></div>
+                                                </div>
+                                            </div>
+                                            <div class="demo-card">
+                                                <div class="demo-video-icon">▶</div>
+                                                <div class="demo-info">
+                                                    <div class="demo-name"></div>
+                                                    <div class="demo-tech"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <video 
+                                id="introVideo"
+                                src="intro.mp4"
+                                poster=""
+                                style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 4;">
+                            </video>
+                            <div class="video-controls" id="customControls" style="display: none;">
+                                <button class="control-btn play-pause-btn" onclick="togglePlayPause()">
+                                    <span class="pause-icon">❚❚</span>
+                                </button>
+                                <div class="progress-bar" onclick="seek(event)">
+                                    <div class="progress-fill" id="progressFill"></div>
+                                </div>
+                                <div class="time-display">
+                                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                                </div>
+                                <button class="control-btn volume-btn" onclick="toggleMute()">
+                                    <span class="volume-icon">🔊</span>
+                                </button>
+                                <button class="control-btn fullscreen-btn" onclick="toggleFullscreen()">
+                                    <span>⛶</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features fade-in-section" id="features">
+        <div class="features-container">
+            <h2 class="features-title">Pour qui ?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🎬</span>
+                    <h3 class="feature-title">Pour les Développeurs</h3>
+                    <p class="feature-description">
+                        Présentez vos projets en vidéo courte. Montrez le contexte, 
+                        la valeur apportée et votre expertise réelle. Fini les CV génériques, 
+                        place à votre histoire unique.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3 class="feature-title">Pour les Recruteurs</h3>
+                    <p class="feature-description">
+                        Explorez des profils vivants sans décoder le jargon technique. 
+                        Comprenez la valeur d'un candidat et gagnez un temps 
+                        précieux dans vos recherches.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="value-prop fade-in-section">
+        <div class="value-prop-container">
+            <h2 class="value-prop-title">Pourquoi ProuveTech ?</h2>
+            <p class="value-prop-text">
+                Aujourd’hui, beaucoup de développeurs sont réduits à des CV remplis de mots-clés, 
+                à des tests techniques déconnectés de la réalité, 
+                ou passent des mois à chercher un poste avec très peu de chances de vraiment se démarquer en entretien.
+            </p>
+            <p class="value-prop-text">
+                ProuveTech replace le projet 
+                concret et la valeur humaine au centre du processus de recrutement.
+            </p>
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="stat-number">2 min</span>
+                    <span class="stat-label">Pour présenter un projet</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">80%</span>
+                    <span class="stat-label">De temps gagné en screening</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Plus humain</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="inscription">
+        <div class="cta-section-content">
+            <h2>                
+                Soyez parmi les premiers à tester ProuveTech. 
+            </h2>
+            <p>
+                Votre feedback m'aidera à créer la plateforme de référence.
+            </p>
+        </div>
+    </section>
+
+    <!-- Formulaire d'inscription -->
+    <section class="signup-form-section" id="signup-form">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Inscrivez-vous pour obtenir un accès à la version bêta</h2>
+            </div>
+            
+            <form id="betaForm" class="signup-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="firstName">Prénom *</label>
+                        <input type="text" id="firstName" name="firstName" required placeholder="Jean">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Nom *</label>
+                        <input type="text" id="lastName" name="lastName" required placeholder="Dupont">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="jean.dupont@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="profile">Vous êtes *</label>
+                    <select id="profile" name="profile" required>
+                        <option value="">Sélectionnez votre profil</option>
+                        <option value="developer">Développeur·se</option>
+                        <option value="recruiter">Recruteur·se</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Rejoindre la Bêta</span>
+                    <span class="btn-loader" style="display: none;">
+                        <span class="spinner"></span>
+                    </span>
+                </button>
+                
+                <div class="form-success" style="display: none;">
+                    <div class="success-icon">🎉</div>
+                    <h3>Votre inscription a été confirmée. </h3>
+                    <p>Vous recevrez bientôt un email avec vos accès bêta.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ProuveTech</p>
+    </footer>
+    <script src="prouvetech-landing.js"></script>
+
+
+</body>
+</html>
