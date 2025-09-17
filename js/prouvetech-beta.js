@@ -151,8 +151,33 @@
             btnLoader.style.display = 'flex';
             submitBtn.disabled = true;
             
-            // Simulate API call
-            setTimeout(() => {
+            // Collecter les données du formulaire
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // OPTION 2: EmailJS - ACTIVE
+            // Remplacez YOUR_SERVICE_ID et YOUR_TEMPLATE_ID par vos identifiants EmailJS
+            const templateParams = {
+                firstName: data.firstName,
+                lastName: data.lastName,
+                email: data.email,
+                profile: data.profile,
+                to_email: 'kevinlokoka@gmail.com', // Email de destination
+                from_name: data.firstName + ' ' + data.lastName,
+                reply_to: data.email
+            };
+            // Envoyer l'email via EmailJS
+            emailjs.send('service_suc6pdj', 'template_ocwxljg', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    showSuccess();
+                }, function(error) {
+                    console.error('FAILED...', error);
+                    alert('Erreur lors de l\'envoi. Veuillez réessayer.');
+                    resetButton();
+                });
+            
+            function showSuccess() {
                 // Hide form fields
                 const formGroups = form.querySelectorAll('.form-group');
                 formGroups.forEach(group => {
@@ -163,11 +188,17 @@
                 // Show success message
                 formSuccess.style.display = 'block';
                 
-                // Optional: Reset form for next use
+                // Reset form for next use
                 setTimeout(() => {
                     form.reset();
                 }, 3000);
-            }, 2000);
+            }
+            
+            function resetButton() {
+                btnText.style.display = 'block';
+                btnLoader.style.display = 'none';
+                submitBtn.disabled = false;
+            }
         });
 
         // Parallax effect on mouse move

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProuveTech</title>
-    <link rel="stylesheet" href="prouvetech-landing.css" />
+    <link rel="stylesheet" href="prouvetech-beta.css" />
 </head>
 <body>
     <!-- Fond dynamique animé -->
@@ -50,15 +50,11 @@
                     <div class="video-features">
                         <div class="video-feature">
                             <span class="feature-check">✓</span>
-                            <span>Présentations vidéo</span>
+                            <span>Valorisez vos projets</span>
                         </div>
                         <div class="video-feature">
                             <span class="feature-check">✓</span>
-                            <span>Interface intuitive et moderne</span>
-                        </div>
-                        <div class="video-feature">
-                            <span class="feature-check">✓</span>
-                            <span>Matching intelligent développeur-recruteur</span>
+                            <span>Trouvez les meilleurs talents</span>
                         </div>
                     </div>
                 </div>
@@ -116,7 +112,7 @@
                             </div>
                             <video 
                                 id="introVideo"
-                                src="intro.mp4"
+                                src="videos/intro.mp4"
                                 poster=""
                                 style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 4;">
                             </video>
@@ -128,7 +124,8 @@
                                     <div class="progress-fill" id="progressFill"></div>
                                 </div>
                                 <div class="time-display">
-                                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                                    <span id="currentTime">0:00</span> 
+                                    <!-- / <span id="duration">0:00</span> -->
                                 </div>
                                 <button class="control-btn volume-btn" onclick="toggleMute()">
                                     <span class="volume-icon">🔊</span>
@@ -265,9 +262,16 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 ProuveTech</p>
+        <p>&copy; 2025 ProuveTech - <a href="">Conditions Génrales</a></p>
     </footer>
-    <script src="prouvetech-landing.js"></script>
+    <script type="text/javascript" src="js/prouvetech-beta.js"></script>
+    <script type="text/javascript" src="js/email.js"></script>
+    <script type="text/javascript">
+        // Initialisez EmailJS avec votre clé publique
+        (function(){
+            emailjs.init("x-W9MOrHTRlahjqL8"); // Remplacez par votre vraie Public Key EmailJS
+        })();
+    </script>
 
 
 </body>
