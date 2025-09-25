@@ -6,9 +6,9 @@
 
 // Configuration
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'votre_db_name'); // À remplacer
-define('DB_USER', 'votre_db_user'); // À remplacer
-define('DB_PASS', 'votre_db_pass'); // À remplacer
+define('DB_NAME', 'beta'); // À remplacer
+define('DB_USER', 'root'); // À remplacer
+define('DB_PASS', ''); // À remplacer
 
 // Email configuration
 define('ADMIN_EMAIL', 'kevinlokoka@gmail.com');
@@ -22,7 +22,7 @@ header('X-Frame-Options: DENY');
 header('X-XSS-Protection: 1; mode=block');
 
 // CORS - Ajustez selon vos besoins
-$allowed_origins = ['https://prouvetech.com', 'https://www.prouvetech.com'];
+$allowed_origins = ['http://127.0.0.1:5500/'];
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 
 if (in_array($origin, $allowed_origins)) {
