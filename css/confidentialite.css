@@ -1,0 +1,109 @@
+.legal-container {
+            max-width: 1000px;
+            margin: 100px auto 50px;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .legal-container h1 {
+            color: #1e3a8a;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        .legal-container h2 {
+            color: #2563eb;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .legal-container p, .legal-container li {
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .legal-container a {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+        .legal-nav {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .legal-nav a {
+            margin-right: 20px;
+            color: #6b7280;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .legal-nav a:hover {
+            color: #2563eb;
+        }
+        .legal-nav a.active {
+            color: #1e3a8a;
+            font-weight: bold;
+        }
+
+        .info-box {
+            background: #f0f9ff;
+            border-left: 4px solid #2563eb;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+                .back-home:hover {
+            transform: translateY(-2px);
+        }
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            background: #f9fafb;
+            font-weight: bold;
+        }
+
+                .warning-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .article-number {
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .back-home:hover {
+            transform: translateY(-2px);
+        }

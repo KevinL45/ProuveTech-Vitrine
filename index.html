@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProuveTech - Prouvez votre valeur de développeur en vidéo</title>
-    <meta name="description" content="ProuveTech révolutionne le recrutement IT. Présentez vos projets en 2 minutes vidéo et démarquez-vous. Rejoignez la bêta exclusive.">
+    <title>Prouve Tech - Pré-inscription</title>
+    <meta name="description" content="Prouve Tech - Pré-inscription">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://prouvetech.fr/">
-    <meta property="og:title" content="ProuveTech - Un CV liste vos compétences, une démo prouve votre valeur">
-    <meta property="og:description" content="Créez le pont entre développeurs et recruteurs. Présentez vos projets en vidéo, montrez votre vraie valeur.">
-    <meta property="og:image" content="https://prouvetech.fr/images/og-image.jpg">
+    <meta property="og:title" content="Prouve Tech - Pré-inscription">
+    <meta property="og:description" content="Identifie ton dev qui pense produit, pas seulement code">
+    <!-- <meta property="og:image" content="https://prouvetech.fr/images/og-image.jpg"> -->
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://prouvetech.fr/">
-    <meta property="twitter:title" content="ProuveTech - Prouvez votre valeur de développeur">
-    <meta property="twitter:description" content="Créez le pont entre développeurs et recruteurs. Présentez vos projets en vidéo.">
+    <meta property="twitter:title" content="Prouve Tech - Pré-inscription">
+    <meta property="twitter:description" content="Identifie ton dev qui pense produit, pas seulement code">
     
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png">
@@ -26,14 +26,54 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.min.css">
     
-    <!-- Google Analytics - Remplacez GA_MEASUREMENT_ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS7M8HMM13"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LS7M8HMM13');
+
+// Charger le nombre d'inscrits au démarrage
+document.addEventListener('DOMContentLoaded', function() {
+    // Fonction pour charger les stats
+    function loadBetaCount() {
+        fetch('api/subscribe.php?stats=1')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success && data.count > 0) {
+                    const countElement = document.getElementById('betaCount');
+                    
+                    // Animation du compteur
+                    const target = data.count;
+                    let current = 0;
+                    const increment = Math.ceil(target / 20);
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            countElement.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            countElement.textContent = current;
+                        }
+                    }, 50);
+                }
+            })
+            .catch(error => {
+                console.error('Erreur chargement stats:', error);
+            });
+    }
+    
+    // Charger au démarrage
+    loadBetaCount();
+    
+    // Recharger après inscription (optionnel)
+    window.updateBetaCount = loadBetaCount;
+});
+</script>
+    
 </head>
 <body>
     <!-- Fond dynamique animé -->
@@ -56,10 +96,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <span class="badge">Bientôt disponible</span>
-            <h1>Un CV liste tes compétences,<br>une démo prouve ta vraie valeur</h1>
+            <span class="badge">Bientôt disponible • <span id="betaCount">0</span> inscrits</span>            
+            <h1>Identifie ton dev qui pense produit,<br>pas seulement code</h1>
             <p class="subtitle">
-                ProuveTech crée le pont entre développeurs et recruteurs.<br>
+                ProuveTech crée le pont entre développeurs et CTO.<br>
                 Présentez vos projets en 2 minutes vidéo, montrez le contexte et la valeur réelle.
             </p>
             <div class="cta-container">
@@ -97,7 +137,7 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                         </svg>
                     </span>
-                    <h3 class="feature-title">Recruteurs IT</h3>
+                    <h3 class="feature-title">CTO</h3>
                     <p class="feature-description">
                         <strong>Découvrez les talents tech autrement.</strong><br>
                         Sans test technique, juste leur vraie histoire. Comprenez rapidement 
@@ -113,7 +153,7 @@
         <div class="problem-container">
             <h2 class="problem-title">Le CV et le code ne racontent pas votre histoire</h2>
             <p class="problem-subtitle">
-                Aujourd'hui, les recruteurs passent à côté de nombreux talents, 
+                Aujourd'hui, les CTO passent à côté de nombreux talents,<br>
                 faute d'une vraie mise en valeur.
             </p>
             
@@ -153,9 +193,54 @@
                             <line x1="22" y1="11" x2="16" y2="11"/>
                         </svg>
                     </div>
-                    <h3>Impossible de se démarquer</h3>
-                    <p>Vous ressemblez à tous les autres profils avec les mêmes frameworks et technologies.</p>
+                    <h3>Difficile de se démarquer</h3>
+                    <p>Des mois de recherche sans pouvoir montrer votre potentiel</p>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="problem-section fade-in-section" id="probleme">
+        <div class="problem-container">
+            <h2 class="problem-title">Vous passez à côté de vos futurs meilleurs devs</h2>
+            <p class="problem-subtitle">
+                Sans une vision concrète de leurs projets,<br>
+                identifier les talents capables de penser produit devient un vrai casse-tête
+            </p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                        <div class="problem-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 7h18v10H3z"/>
+                                <path d="M7 11h10"/>
+                                <path d="M7 14h6"/>
+                            </svg>
+                        </div>
+                        <h3>Triage chronophage</h3>
+                        <p>Parcourir CV et entretiens prend du temps, 
+                            <br>difficile d'identifier rapidement les candidats pertinents.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="7" r="4"/>
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                            </svg>
+                        </div>
+                        <h3>Évaluer l'impact réel</h3>
+                        <p>Il est difficile de jauger l'impact business et la capacité produit d'un candidat à partir d'un code ou d'un test isolé.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <path d="M8 12h8"/>
+                                <path d="M8 16h4"/>
+                            </svg>
+                        </div>
+                        <h3>Biais des évaluations</h3>
+                        <p>Les tests techniques favorisent parfois des compétences algorithmiques au détriment de la pensée produit et de la communication.</p>
+                    </div>
             </div>
         </div>
     </section>
@@ -223,14 +308,17 @@
                 
                 <div class="functionality-block">
                     <div class="functionality-header">
-                        <span class="functionality-badge">Pour les recruteurs</span>
+                        <span class="functionality-badge">Pour les CTO</span>
                     </div>
                     
                     <div class="functionality-item">
                         <div class="feature-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                            </svg>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
                         </div>
                         <div class="functionality-content">
                             <h4>Approche humaine</h4>
@@ -305,7 +393,7 @@
                     <select id="profile" name="profile" required>
                         <option value="">Sélectionnez votre profil</option>
                         <option value="developer">Développeur·se</option>
-                        <option value="recruiter">Recruteur·se</option>
+                        <option value="CTO">CTO</option>
                     </select>
                 </div>
 
@@ -314,21 +402,30 @@
                     <input type="text" name="website" tabindex="-1" autocomplete="off">
                 </div>                
                 <button type="submit" class="submit-btn">
-                    <span class="btn-text">Rejoindre la Bêta pour être notifié</span>
+                    <span class="btn-text">Je m'inscris</span>
                     <span class="btn-loader" style="display: none;">
                         <span class="spinner"></span>
                     </span>
                 </button>
                 
                 <div class="form-success" style="display: none;">
-                    <div class="success-icon">🎉</div>
+                    <div class="success-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="9 12 11 14 15 10"/>
+                        </svg>
+                    </div>
                     <h3>Inscription confirmée !</h3>
-                    <p>Vérifiez votre boîte mail.</p>
                     <p class="success-detail">Vous recevrez vos accès bêta dès le lancement bientôt.</p>
                 </div>
-
                 <div class="form-error" style="display: none;">
-                    <div class="error-icon">⚠️</div>
+                    <div class="error-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </div>
                     <h3>Une erreur est survenue</h3>
                     <p class="error-message"></p>
                     <button type="button" class="retry-btn" onclick="resetForm()">Réessayer</button>
@@ -340,13 +437,13 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <!-- <div class="footer-links">
-                <a href="/legal/mentions-legales.html">Mentions légales</a>
+            <div class="footer-links">
+                <a href="legal/mentions-legales.html">Mentions légales</a>
                 <span class="separator">•</span>
-                <a href="/legal/politique-confidentialite.html">Politique de confidentialité</a>
+                <a href="legal/politique-confidentialite.html">Politique de confidentialité</a>
                 <span class="separator">•</span>
-                <a href="/legal/cgu.html">CGU</a>
-            </div> -->
+                <a href="legal/cgu.html">CGU</a>
+            </div>
             <p class="footer-copyright">
                 © 2025 ProuveTech. Tous droits réservés. - Développé par
                 <a href="https://www.linkedin.com/in/kevin-lokoka/" target="_blank" rel="noopener">Kevin Lokoka</a>

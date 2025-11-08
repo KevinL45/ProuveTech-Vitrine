@@ -3,100 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de Confidentialité - ProuveTech</title>
+    <title>Politique de Confidentialité - Prouve Tech</title>
     <meta name="description" content="Politique de confidentialité et protection des données personnelles de ProuveTech">
     <link rel="icon" type="image/png" href="/images/logo.png">
     <link rel="stylesheet" href="/css/style.min.css">
-    <style>
-        .legal-container {
-            max-width: 800px;
-            margin: 100px auto 50px;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-        .legal-container h1 {
-            color: #1e3a8a;
-            margin-bottom: 30px;
-            font-size: 2.5rem;
-        }
-        .legal-container h2 {
-            color: #2563eb;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-        .legal-container h3 {
-            color: #4b5563;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        .legal-container p, .legal-container li {
-            line-height: 1.8;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .legal-container a {
-            color: #2563eb;
-            text-decoration: underline;
-        }
-        .legal-nav {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #e5e7eb;
-        }
-        .legal-nav a {
-            margin-right: 20px;
-            color: #6b7280;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .legal-nav a:hover {
-            color: #2563eb;
-        }
-        .legal-nav a.active {
-            color: #1e3a8a;
-            font-weight: bold;
-        }
-        .info-box {
-            background: #f0f9ff;
-            border-left: 4px solid #2563eb;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-        .back-home {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        .back-home:hover {
-            transform: translateY(-2px);
-        }
-        table {
-            width: 100%;
-            margin: 20px 0;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        th {
-            background: #f9fafb;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/confidentialite.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LS7M8HMM13"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LS7M8HMM13');
+    </script>
 </head>
 <body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="ProuveTech" class="logo-img" width="200" height="40">
+            </div>
+            <a href="../index.html" class="cta-nav">Retour à la page d'accueil</a>
+        </div>
+    </nav>
+
     <div class="dynamic-bg">
         <div class="floating-shape shape1"></div>
         <div class="floating-shape shape2"></div>
@@ -104,14 +38,14 @@
 
     <div class="legal-container">
         <div class="legal-nav">
-            <a href="/legal/mentions-legales.html">Mentions Légales</a>
-            <a href="/legal/politique-confidentialite.html" class="active">Politique de Confidentialité</a>
-            <a href="/legal/cgu.html">CGU</a>
+            <a href="mentions-legales.html">Mentions Légales</a>
+            <a href="politique-confidentialite.html" class="active">Politique de Confidentialité</a>
+            <a href="cgu.html">CGU</a>
         </div>
 
         <h1>Politique de Confidentialité</h1>
         
-        <p><strong>Dernière mise à jour : 11 octobre 2025</strong></p>
+        <p><strong>Dernière mise à jour : 12 octobre 2025</strong></p>
 
         <div class="info-box">
             <p><strong>Résumé :</strong> ProuveTech collecte uniquement les données nécessaires pour vous contacter lors du lancement de la plateforme. Vos données sont sécurisées et ne sont jamais vendues à des tiers.</p>
@@ -121,8 +55,7 @@
         <p>Le responsable du traitement des données personnelles collectées sur ProuveTech.fr est :</p>
         <ul>
             <li><strong>Kevin Lokoka</strong></li>
-            <li><strong>Email :</strong> dpo@prouvetech.fr</li>
-            <li><strong>Adresse :</strong> [Votre adresse]</li>
+            <li><strong>Email :</strong> kevin.lokoka@prouvetech.fr</li>
         </ul>
 
         <h2>2. Données collectées</h2>
@@ -151,16 +84,6 @@
                 <td>Adaptation du service</td>
             </tr>
             <tr>
-                <td>Adresse IP</td>
-                <td>Automatique</td>
-                <td>Sécurité et prévention des abus</td>
-            </tr>
-            <tr>
-                <td>User Agent</td>
-                <td>Automatique</td>
-                <td>Compatibilité technique</td>
-            </tr>
-            <tr>
                 <td>Date d'inscription</td>
                 <td>Automatique</td>
                 <td>Gestion chronologique des accès bêta</td>
@@ -179,8 +102,8 @@
         <h2>3. Base légale du traitement</h2>
         <p>Les traitements de données personnelles effectués par ProuveTech reposent sur :</p>
         <ul>
-            <li><strong>Le consentement (Article 6.1.a du RGPD) :</strong> Pour l'inscription à la bêta et l'envoi de communications</li>
-            <li><strong>L'intérêt légitime (Article 6.1.f du RGPD) :</strong> Pour la sécurité du site et la prévention de la fraude</li>
+            <li><strong>Le consentement :</strong> Pour l'inscription à la bêta et l'envoi de communications</li>
+            <li><strong>L'intérêt légitime :</strong> Pour la sécurité du site et la prévention de la fraude</li>
         </ul>
 
         <h2>4. Utilisation des données</h2>
@@ -196,7 +119,7 @@
         <h2>5. Destinataires des données</h2>
         <p>Vos données personnelles sont accessibles à :</p>
         <ul>
-            <li><strong>L'équipe ProuveTech :</strong> Pour la gestion du service</li>
+            <li><strong>ProuveTech :</strong> Pour la gestion du service</li>
             <li><strong>o2switch :</strong> Notre hébergeur (données techniques uniquement)</li>
             <li><strong>Google Analytics :</strong> Données de navigation anonymisées</li>
         </ul>
@@ -214,10 +137,6 @@
             <tr>
                 <td>Données d'inscription bêta</td>
                 <td>3 ans après le dernier contact ou jusqu'à votre demande de suppression</td>
-            </tr>
-            <tr>
-                <td>Adresses IP et logs</td>
-                <td>12 mois (obligation légale)</td>
             </tr>
             <tr>
                 <td>Cookies analytiques</td>
@@ -249,14 +168,9 @@
                 <th>Durée</th>
             </tr>
             <tr>
-                <td>_ga, _gid</td>
-                <td>Google Analytics - Statistiques</td>
+                <td>Google Analytics</td>
+                <td>Statistiques</td>
                 <td>13 mois</td>
-            </tr>
-            <tr>
-                <td>pt_session</td>
-                <td>Session utilisateur</td>
-                <td>Session</td>
             </tr>
         </table>
 
@@ -269,62 +183,49 @@
             <li><a href="https://support.microsoft.com/fr-fr/help/17442" target="_blank" rel="noopener">Edge</a></li>
         </ul>
 
-        <h2>9. Vos droits (RGPD)</h2>
-        <p>Conformément au RGPD, vous disposez des droits suivants :</p>
-        
-        <h3>9.1 Droit d'accès (Article 15 RGPD)</h3>
-        <p>Vous pouvez demander l'accès à toutes les données personnelles vous concernant.</p>
-
-        <h3>9.2 Droit de rectification (Article 16 RGPD)</h3>
-        <p>Vous pouvez demander la correction de données inexactes ou incomplètes.</p>
-
-        <h3>9.3 Droit à l'effacement "Droit à l'oubli" (Article 17 RGPD)</h3>
-        <p>Vous pouvez demander la suppression de vos données personnelles.</p>
-
-        <h3>9.4 Droit à la limitation (Article 18 RGPD)</h3>
-        <p>Vous pouvez demander la limitation du traitement de vos données.</p>
-
-        <h3>9.5 Droit à la portabilité (Article 20 RGPD)</h3>
-        <p>Vous pouvez recevoir vos données dans un format structuré et lisible.</p>
-
-        <h3>9.6 Droit d'opposition (Article 21 RGPD)</h3>
-        <p>Vous pouvez vous opposer au traitement de vos données.</p>
-
-        <h3>9.7 Droit de retirer votre consentement</h3>
-        <p>Vous pouvez retirer votre consentement à tout moment.</p>
 
         <div class="info-box">
             <p><strong>Pour exercer vos droits :</strong><br>
-            Envoyez un email à : dpo@prouvetech.fr<br>
-            Ou par courrier : [Votre adresse]<br>
+            Envoyez un email à : kevin.lokoka@prouvetech.fr<br>
             Nous répondrons dans un délai maximum de 30 jours.</p>
         </div>
+        <h2>9. Vos droits (RGPD)</h2>
+        <p>L'accès, la correction et la suppression de vos données personnelles vous concernant.</p>
+        <p>Opposer au traitement de vos données.</p>
+        <p>Limitation du traitement de vos données.</p>
+        <p>Retirer votre consentement à tout moment.</p>
 
-        <h2>10. Réclamation auprès de la CNIL</h2>
-        <p>Si vous estimez que le traitement de vos données personnelles constitue une violation du RGPD, vous pouvez introduire une réclamation auprès de la CNIL :</p>
-        <ul>
-            <li><strong>Site web :</strong> <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a></li>
-            <li><strong>Adresse :</strong> 3 Place de Fontenoy - TSA 80715 - 75334 PARIS CEDEX 07</li>
-            <li><strong>Téléphone :</strong> 01 53 73 22 22</li>
-        </ul>
 
-        <h2>11. Transferts internationaux</h2>
-        <p>Vos données sont hébergées en France chez o2switch. Google Analytics peut transférer des données anonymisées aux États-Unis dans le cadre du Data Privacy Framework.</p>
-
-        <h2>12. Mineurs</h2>
+        <h2>10. Age des utilisateurs</h2>
         <p>ProuveTech n'est pas destiné aux personnes de moins de 16 ans. Nous ne collectons pas sciemment de données personnelles de mineurs.</p>
 
-        <h2>13. Modifications</h2>
+        <h2>10. Modifications</h2>
         <p>Cette politique de confidentialité peut être mise à jour. Toute modification sera publiée sur cette page avec la date de mise à jour.</p>
 
-        <h2>14. Contact</h2>
-        <p>Pour toute question concernant cette politique de confidentialité ou vos données personnelles :</p>
-        <ul>
-            <li><strong>Email DPO :</strong> dpo@prouvetech.fr</li>
-            <li><strong>Email général :</strong> contact@prouvetech.fr</li>
-        </ul>
+        
+        <h2>11. Acceptation</h2>
+        <p>En utilisant l’application web, vous acceptez cette politique de confidentialité.</p>
 
-        <a href="/" class="back-home">← Retour à l'accueil</a>
-    </div>
+        <h2>12. Contact</h2>
+                <p>Email : kevin.lokoka@prouvetech.fr</p>
+        </div>
+
+    <!-- Footer -->
+        <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="mentions-legales.html">Mentions légales</a>
+                <span class="separator">•</span>
+                <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                <span class="separator">•</span>
+                <a href="cgu.html">CGU</a>
+            </div>
+            <p class="footer-copyright">
+                © 2025 ProuveTech. Tous droits réservés. - Développé par
+                <a href="https://www.linkedin.com/in/kevin-lokoka/" target="_blank" rel="noopener">Kevin Lokoka</a>
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>

@@ -1,9 +1,4 @@
 <?php
-/**
- * ProuveTech - Script d’inscription à la bêta (version production)
- * Sécurisée, prête à l’hébergement o2switch
- */
-
 // 🚫 Ne jamais afficher les erreurs en production
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
@@ -11,14 +6,14 @@ error_reporting(0);
 
 // 🧱 Paramètres de connexion à la base de données
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'loke1124_beta');   // ← à adapter
-define('DB_USER', 'loke1124_kevinl45');   // ← à adapter
-define('DB_PASS', '#YH,w?Rxc)LU'); // ← à adapter
+define('DB_NAME', 'loke1124_beta');  
+define('DB_USER', 'loke1124_kevinl45');   
+define('DB_PASS', '#YH,w?Rxc)LU'); 
 
 // define('DB_HOST', 'localhost');
-// define('DB_NAME', 'beta');   // ← à adapter
-// define('DB_USER', 'root');   // ← à adapter
-// define('DB_PASS', ''); // ← à adapter
+// define('DB_NAME', 'beta');   
+// define('DB_USER', 'root');  
+// define('DB_PASS', ''); 
 
 // 📦 Réponse JSON
 header('Content-Type: application/json; charset=utf-8');
@@ -32,7 +27,8 @@ header('Strict-Transport-Security: max-age=31536000; includeSubDomains');
 
 // 🌍 CORS (si besoin d’un frontend externe)
 header('Access-Control-Allow-Origin: https://prouvetech.fr');
-header('Access-Control-Allow-Methods: POST, OPTIONS');
+// header('Access-Control-Allow-Origin: http://localhost/prouvetechbeta/');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -43,6 +39,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 // 📮 Fonction utilitaire pour nettoyer les entrées
 function clean_input($data) {
     return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
+}
+
+// 📊  Gestions des stats  (requête GET avec ?stats=1)
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['stats'])) {
+    try {
+        $pdo = new PDO(
+            "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4",
+            DB_USER,
+            DB_PASS,
+            [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+        );
+        
+        $count = $pdo->query("SELECT COUNT(*) FROM beta_subscribers")->fetchColumn();
+        
+        echo json_encode([
+            'success' => true,
+            'count' => (int)$count
+        ]);
+        exit();
+        
+    } catch (PDOException $e) {
+        echo json_encode(['success' => false, 'count' => 0]);
+        exit();
+    }
 }
 
 // 🧾 Vérification méthode
@@ -70,7 +90,7 @@ $errors = [];
 
 if (empty($name) || strlen($name) < 2) $errors[] = 'Nom invalide';
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Email invalide';
-if (!in_array($profile, ['developer', 'recruiter'])) $errors[] = 'Profil invalide';
+if (!in_array($profile, ['developer', 'cto'])) $errors[] = 'Profil invalide';
 
 if (!empty($errors)) {
     http_response_code(400);
