@@ -97,14 +97,13 @@ document.addEventListener('DOMContentLoaded', function() {
     <section class="hero">
         <div class="hero-content">
             <span class="badge">Bientôt disponible • <span id="betaCount">0</span> inscrits</span>            
-            <h1>Identifie ton dev qui pense produit,<br>pas seulement code</h1>
+            <h1>Identifie les devs qui pensent produit,<br>pas seulement code</h1>
             <p class="subtitle">
-                ProuveTech crée le pont entre développeurs et CTO.<br>
-                Présentez vos projets en 2 minutes vidéo, montrez le contexte et la valeur réelle.
+                Prouve Tech connecte les CTO et les développeurs à travers des démos de projets qui prouvent la vraie valeur des talents en 2 minutes.
             </p>
             <div class="cta-container">
-                <a href="#inscription" class="cta-primary">Rejoindre la Bêta</a>
-                <a href="#solution" class="cta-secondary">Découvrir les screenshots</a>
+                <a href="#probleme-developer" class="cta-primary">Je suis développeur/se</a>
+                <a href="#probleme-cto" class="cta-primary">Je suis CTO </a>
             </div>
         </div>
     </section>
@@ -149,9 +148,9 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Section Le Problème -->
-    <section class="problem-section fade-in-section" id="probleme">
+    <section class="problem-section fade-in-section" id="probleme-developer">
         <div class="problem-container">
-            <h2 class="problem-title">Le CV et le code ne racontent pas votre histoire</h2>
+            <h2 class="problem-title" id="developer">Le CV et le code ne racontent pas votre histoire</h2>
             <p class="problem-subtitle">
                 Aujourd'hui, les CTO passent à côté de nombreux talents,<br>
                 faute d'une vraie mise en valeur.
@@ -194,17 +193,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         </svg>
                     </div>
                     <h3>Difficile de se démarquer</h3>
-                    <p>Des mois de recherche sans pouvoir montrer votre potentiel</p>
+                    <p>Des mois de recherche sans pouvoir montrer votre potentiel.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="problem-section fade-in-section" id="probleme">
+    <section class="problem-section fade-in-section" id="probleme-cto">
         <div class="problem-container">
-            <h2 class="problem-title">Vous passez à côté de vos futurs meilleurs devs</h2>
+            <h2 class="problem-title" id="cto">Vous passez à côté de vos futurs meilleurs devs</h2>
             <p class="problem-subtitle">
                 Sans une vision concrète de leurs projets,<br>
-                identifier les talents capables de penser produit devient un vrai casse-tête
+                identifier les talents capables de penser produit devient un vrai casse-tête.
             </p>
             
             <div class="problem-grid">
@@ -246,10 +245,21 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Section La Solution -->
-         <!-- Section La Solution -->
     <section class="solution-section fade-in-section" id="solution">
         <div class="solution-container">
-            <h2 class="solution-title">Et si vous pouviez montrer ce que vous valez vraiment&nbsp;?</h2>
+            <h2 class="solution-title">Découvrez la réalité derrière chaque profil.</h2>
+            <p class="solution-subtitle">Une présentation claire : ce qui a été construit, pourquoi et comment.</p>
+
+            <div class="solution-features">
+                <div class="solution-feature">
+                    <h3>Transparence</h3>
+                    <ul class="solution-benefits">
+                        <li>Un contexte clair pour comprendre le projet en un coup d'œil</li>
+                        <li>Une valeur concrète et un impact mesurable, visibles en vidéo</li>
+                        <li>Un rôle et un positionnement explicités sans ambiguïté</li>
+                    </ul>
+                </div>
+            </div>
 
             <div class="solution-slider">
                 <div class="slide active">
@@ -372,7 +382,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="form-container">
             <div class="form-header">
                 <h2>Soyez parmi les premiers à tester ProuveTech</h2>
-                <p>Places limitées - Rejoignez la bêta exclusive</p>
+                <p>Places limitées - Lancement prévu prochainement</p>
             </div>
             
             <form id="betaForm" class="signup-form" action="/api/subscribe.php" method="POST">
@@ -400,13 +410,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Honeypot anti-spam -->
                 <div style="display:none;">
                     <input type="text" name="website" tabindex="-1" autocomplete="off">
-                </div>                
+                </div>              
                 <button type="submit" class="submit-btn">
                     <span class="btn-text">Je m'inscris</span>
                     <span class="btn-loader" style="display: none;">
                         <span class="spinner"></span>
                     </span>
                 </button>
+               
                 
                 <div class="form-success" style="display: none;">
                     <div class="success-icon">
