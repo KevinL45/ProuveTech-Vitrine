@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prouve Tech - Pré-inscription</title>
-    <meta name="description" content="Prouve Tech - Pré-inscription">
+    <title>Prouve Tech - Identifie les devs qui pensent produit</title>
+    <meta name="description" content="Prouve Tech connecte les CTO et les développeurs à travers des démos de projets. Découvrez la vraie valeur des talents en 2 minutes.">
+    <meta name="keywords" content="recrutement tech, développeurs, CTO, évaluation, projets, portfolio vidéo">
+    <meta name="author" content="Prouve Tech">
+    <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://prouvetech.fr/">
-    <meta property="og:title" content="Prouve Tech - Pré-inscription">
-    <meta property="og:description" content="Identifie ton dev qui pense produit, pas seulement code">
-    <!-- <meta property="og:image" content="https://prouvetech.fr/images/og-image.jpg"> -->
+    <meta property="og:title" content="Prouve Tech - Identifie les devs qui pensent produit">
+    <meta property="og:description" content="Connectez les CTO et les développeurs à travers des démos de projets. Découvrez la vraie valeur des talents en 2 minutes.">
+    <meta property="og:image" content="https://prouvetech.fr/images/miniature_prouve_tech.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="fr_FR">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://prouvetech.fr/">
-    <meta property="twitter:title" content="Prouve Tech - Pré-inscription">
-    <meta property="twitter:description" content="Identifie ton dev qui pense produit, pas seulement code">
+    <meta property="twitter:title" content="Prouve Tech - Identifie les devs qui pensent produit">
+    <meta property="twitter:description" content="Connectez les CTO et les développeurs à travers des démos de projets qui prouvent la vraie valeur des talents en 2 minutes.">
     
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png">
@@ -87,9 +93,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <img src="images/logo.png" alt="ProuveTech" class="logo-img" width="200" height="40">
+                <img src="images/logo.png" alt="Prouve Tech" class="logo-img" width="200" height="40">
             </div>
-            <a href="#inscription" class="cta-nav">Devenir Bêta-Testeur</a>
+            <a href="#inscription" class="cta-nav">Devenir bêta-testeur</a>
         </div>
     </nav>
 
@@ -99,51 +105,188 @@ document.addEventListener('DOMContentLoaded', function() {
             <span class="badge">Bientôt disponible • <span id="betaCount">0</span> inscrits</span>            
             <h1>Identifie les devs qui pensent produit,<br>pas seulement code</h1>
             <p class="subtitle">
-                Prouve Tech connecte les CTO et les développeurs à travers des démos de projets qui prouvent la vraie valeur des talents en 2 minutes.
+                Prouve Tech connecte les CTO et les développeurs à travers des démos de projets qui prouvent la vraie valeur des talents.
             </p>
             <div class="cta-container">
-                <a href="#probleme-developer" class="cta-primary">Je suis développeur/se</a>
-                <a href="#probleme-cto" class="cta-primary">Je suis CTO </a>
+                <button class="cta-primary" data-profile="developer">Je suis développeur/se</button>
+                <button class="cta-primary" data-profile="cto">Je suis CTO</button>
             </div>
         </div>
     </section>
 
-    <!-- Section Pour qui ? -->
-    <section class="features fade-in-section" id="pour-qui">
-        <div class="features-container">
-            <h2 class="features-title">Pour qui ?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16 18 22 12 16 6"/>
-                            <polyline points="8 6 2 12 8 18"/>
-                        </svg>
-                    </span>
-                    <h3 class="feature-title">Développeurs</h3>
-                    <p class="feature-description">
-                        <strong>Montrez votre talent autrement.</strong><br>
-                        Prouvez votre valeur en vidéo, pas en lignes de code. Expliquez votre raisonnement, 
-                        votre approche et l'impact réel de vos projets.
-                    </p>
+<div class="info-CTO" style="display: none;" id="info-cto">
+
+    <!-- Section La Solution -->
+    <section class="solution-section fade-in-section" id="solution">
+        <div class="solution-container">
+            <h2 class="solution-title">Découvrez la réalité derrière chaque profil.</h2>
+            <p class="solution-subtitle">Une présentation claire : ce qui a été construit, pourquoi et comment.</p>
+
+            <div class="solution-features">
+                <div class="solution-feature">
+                    <h3>Transparence</h3>
+                    <ul class="solution-benefits">
+                        <li>Un contexte clair pour comprendre le projet en un coup d'œil</li>
+                        <li>Une valeur concrète et un impact mesurable, visibles en vidéo</li>
+                        <li>Un rôle et un positionnement explicités sans ambiguïté</li>
+                    </ul>
                 </div>
-                <div class="feature-card">
-                    <span class="feature-icon">
+            </div>
+
+            <div class="solution-video">
+                <video width="100%" height="auto" autoplay muted loop style="border-radius: 20px;">
+                    <source src="videos/plateforme_prouve_tech.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéo HTML5.
+                </video>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section Le Problème -->
+    <section class="problem-section fade-in-section" id="probleme-cto">
+        <div class="problem-container">
+            <h2 class="problem-title" id="cto">Vous passez à côté de vos futurs meilleurs devs</h2>
+            <p class="problem-subtitle">
+                Sans une vision concrète de leurs projets,<br>
+                identifier les talents capables de penser produit devient un vrai casse-tête.
+            </p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                        <div class="problem-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 7h18v10H3z"/>
+                                <path d="M7 11h10"/>
+                                <path d="M7 14h6"/>
+                            </svg>
+                        </div>
+                        <h3>Triage chronophage</h3>
+                        <p>Parcourir CV et entretiens prend du temps, 
+                            <br>difficile d'identifier rapidement les candidats pertinents.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="7" r="4"/>
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                            </svg>
+                        </div>
+                        <h3>Évaluer l'impact réel</h3>
+                        <p>Il est difficile de jauger l'impact business et la capacité produit d'un candidat à partir d'un code ou d'un test isolé.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <path d="M8 12h8"/>
+                                <path d="M8 16h4"/>
+                            </svg>
+                        </div>
+                        <h3>Biais des évaluations</h3>
+                        <p>Les tests techniques favorisent parfois des compétences algorithmiques au détriment de la pensée produit et de la communication.</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Fonctionnalités -->
+    <section class="functionalities-section fade-in-section" id="fonctionnalites">
+        <div class="functionalities-container">
+            <h2 class="functionalities-title">Des fonctionnalités pensées pour vous</h2>
+            
+            <div class="functionalities-grid">
+                
+                <div class="functionality-block">
+                    <div class="functionality-header">
+                        <span class="functionality-badge">Pour les CTO</span>
+                    </div>
+                    
+                    <div class="functionality-item">
+                        <div class="feature-icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                             <circle cx="9" cy="7" r="4"/>
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                         </svg>
-                    </span>
-                    <h3 class="feature-title">CTO</h3>
-                    <p class="feature-description">
-                        <strong>Découvrez les talents tech autrement.</strong><br>
-                        Sans test technique, juste leur vraie histoire. Comprenez rapidement 
-                        la valeur d'un candidat et gagnez du temps dans vos recherches.
-                    </p>
+                        </div>
+                        <div class="functionality-content">
+                            <h4>Approche humaine</h4>
+                            <p>Un recrutement basé sur la personnalité et les compétences réelles, pas sur des tests artificiels.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="functionality-item">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div class="functionality-content">
+                            <h4>Gain de temps</h4>
+                            <p>Identifiez les bons profils sans passer des heures à décoder des CV techniques.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Proposition de valeur pour CTO -->
+    <section class="value-prop fade-in-section">
+        <div class="value-prop-container">
+            <h2 class="value-prop-title">Pourquoi Prouve Tech pour vous ?</h2>
+            <p class="value-prop-text">
+                Gagnez du temps, trouvez les vrais talents qui comprennent le produit.
+            </p>
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="stat-number">2 min</span>
+                    <span class="stat-label">Pour évaluer un candidat</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Vision produit visibles</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Test technique biaisé</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="info-developer" id="info-developer">
+
+    <!-- Section La Solution -->
+    <section class="solution-section fade-in-section" id="solution">
+        <div class="solution-container">
+            <h2 class="solution-title">Montrez votre vraie valeur</h2>
+            <p class="solution-subtitle">Racontez votre impact réel et ce que vous avez appris.</p>
+
+            <div class="solution-features">
+                <div class="solution-feature">
+                    <h3>Enfin, être compris</h3>
+                    <ul class="solution-benefits">
+                        <li>Expliquez votre réflexion produit et votre stratégie</li>
+                        <li>Montrez l'impact réel de vos projets</li>
+                        <li>Laissez votre personalité et votre passion briller au travers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="solution-video">
+                <video width="100%" height="auto" autoplay muted loop style="border-radius: 20px;">
+                    <source src="videos/plateforme_prouve_tech.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéo HTML5.
+                </video>
+            </div>
+
+            <!-- <div class="solution-cta">
+                <a href="#inscription" class="cta-primary">Devenir bêta-testeur</a>
+            </div> -->
         </div>
     </section>
 
@@ -198,84 +341,6 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
     </section>
-    <section class="problem-section fade-in-section" id="probleme-cto">
-        <div class="problem-container">
-            <h2 class="problem-title" id="cto">Vous passez à côté de vos futurs meilleurs devs</h2>
-            <p class="problem-subtitle">
-                Sans une vision concrète de leurs projets,<br>
-                identifier les talents capables de penser produit devient un vrai casse-tête.
-            </p>
-            
-            <div class="problem-grid">
-                <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 7h18v10H3z"/>
-                                <path d="M7 11h10"/>
-                                <path d="M7 14h6"/>
-                            </svg>
-                        </div>
-                        <h3>Triage chronophage</h3>
-                        <p>Parcourir CV et entretiens prend du temps, 
-                            <br>difficile d'identifier rapidement les candidats pertinents.</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="7" r="4"/>
-                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-                            </svg>
-                        </div>
-                        <h3>Évaluer l'impact réel</h3>
-                        <p>Il est difficile de jauger l'impact business et la capacité produit d'un candidat à partir d'un code ou d'un test isolé.</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                                <path d="M8 12h8"/>
-                                <path d="M8 16h4"/>
-                            </svg>
-                        </div>
-                        <h3>Biais des évaluations</h3>
-                        <p>Les tests techniques favorisent parfois des compétences algorithmiques au détriment de la pensée produit et de la communication.</p>
-                    </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section La Solution -->
-    <section class="solution-section fade-in-section" id="solution">
-        <div class="solution-container">
-            <h2 class="solution-title">Découvrez la réalité derrière chaque profil.</h2>
-            <p class="solution-subtitle">Une présentation claire : ce qui a été construit, pourquoi et comment.</p>
-
-            <div class="solution-features">
-                <div class="solution-feature">
-                    <h3>Transparence</h3>
-                    <ul class="solution-benefits">
-                        <li>Un contexte clair pour comprendre le projet en un coup d'œil</li>
-                        <li>Une valeur concrète et un impact mesurable, visibles en vidéo</li>
-                        <li>Un rôle et un positionnement explicités sans ambiguïté</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="solution-slider">
-                <div class="slide active">
-                    <img src="images/app1.png" alt="Aperçu 1 de la solution" width="1897" height="907">
-                </div>
-                <div class="slide">
-                    <img src="images/app2.png" alt="Aperçu 2 de la solution" width="1897" height="907">
-                </div>
-
-                <button class="slider-btn prev">&#10094;</button>
-                <button class="slider-btn next">&#10095;</button>
-            </div>
-        </div>
-    </section>
-
-
 
     <!-- Section Fonctionnalités -->
     <section class="functionalities-section fade-in-section" id="fonctionnalites">
@@ -315,73 +380,40 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 </div>
-                
-                <div class="functionality-block">
-                    <div class="functionality-header">
-                        <span class="functionality-badge">Pour les CTO</span>
-                    </div>
-                    
-                    <div class="functionality-item">
-                        <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                        </div>
-                        <div class="functionality-content">
-                            <h4>Approche humaine</h4>
-                            <p>Un recrutement basé sur la personnalité et les compétences réelles, pas sur des tests artificiels.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="functionality-item">
-                        <div class="feature-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                        </div>
-                        <div class="functionality-content">
-                            <h4>Gain de temps</h4>
-                            <p>Identifiez les bons profils sans passer des heures à décoder des CV techniques.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Value Proposition (mise à jour) -->
+    <!-- Proposition de valeur pour Développeurs -->
     <section class="value-prop fade-in-section">
         <div class="value-prop-container">
-            <h2 class="value-prop-title">Pourquoi ProuveTech ?</h2>
+            <h2 class="value-prop-title">Pourquoi Prouve Tech pour vous ?</h2>
             <p class="value-prop-text">
-                ProuveTech replace le projet concret et la valeur humaine au centre du processus de recrutement.
+                Enfin, un moyen de montrer votre vraie valeur sans artifices ni biaises.
             </p>
             <div class="stats-grid">
                 <div class="stat">
                     <span class="stat-number">2 min</span>
-                    <span class="stat-label">Pour présenter un projet</span>
+                    <span class="stat-label">Pour raconter votre histoire</span>
                 </div>
                 <div class="stat">
                     <span class="stat-number">100%</span>
-                    <span class="stat-label">Humain et authentique</span>
+                    <span class="stat-label">Authentique et honnête</span>
                 </div>
                 <div class="stat">
                     <span class="stat-number">0</span>
-                    <span class="stat-label">Test technique artificiel</span>
+                    <span class="stat-label">Algorithme hors contexte</span>
                 </div>
             </div>
         </div>
     </section>
+</div>
 
     <!-- Formulaire d'inscription -->
     <section class="signup-form-section" id="inscription">
         <div class="form-container">
             <div class="form-header">
-                <h2>Soyez parmi les premiers à tester ProuveTech</h2>
+                <h2>Soyez parmi les premiers à tester Prouve Tech</h2>
                 <p>Places limitées - Lancement prévu prochainement</p>
             </div>
             
@@ -403,7 +435,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <select id="profile" name="profile" required>
                         <option value="">Sélectionnez votre profil</option>
                         <option value="developer">Développeur·se</option>
-                        <option value="CTO">CTO</option>
+                        <option value="cto">CTO</option>
                     </select>
                 </div>
 
@@ -456,7 +488,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="legal/cgu.html">CGU</a>
             </div>
             <p class="footer-copyright">
-                © 2025 ProuveTech. Tous droits réservés. - Développé par
+                © 2025 Prouve Tech. Tous droits réservés. - Développé par
                 <a href="https://www.linkedin.com/in/kevin-lokoka/" target="_blank" rel="noopener">Kevin Lokoka</a>
             </p>
         </div>
