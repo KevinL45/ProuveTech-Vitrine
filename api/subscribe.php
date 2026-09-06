@@ -1,4 +1,9 @@
 <?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+
 // 🚫 Ne jamais afficher les erreurs en production
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
@@ -6,9 +11,9 @@ error_reporting(0);
 
 // 🧱 Paramètres de connexion à la base de données
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'loke1124_beta');  
-define('DB_USER', 'loke1124_kevinl45');   
-define('DB_PASS', '#YH,w?Rxc)LU'); 
+define('DB_NAME', 'prouvetech_beta');  
+define('DB_USER', 'prouvetech_app');   
+define('DB_PASS', getenv('PROUVETECH_DB_PASS') ?: '');
 
 // define('DB_HOST', 'localhost');
 // define('DB_NAME', 'beta');   
@@ -126,15 +131,12 @@ if ($stmt->fetch()) {
 $stmt = $pdo->prepare("INSERT INTO beta_subscribers (name, email, profile) VALUES (?, ?, ?)");
 $stmt->execute([$name, $email, $profile]);
 
-// ✅ Réponse au frontend
-http_response_code(200);
-echo json_encode(['success' => true, 'message' => 'Inscription réussie !']);
-
 // 📧 Envoi du mail à l’admin
-$admin_email = 'kevinlokoka@gmail.com';   // ← ton email de réception
-$from_email  = 'kevin.lokoka@prouvetech.fr';  // ← ton adresse d’envoi
+$admin_email = 'kevinlokoka@gmail.com';
+$from_email  = getenv('PROUVETECH_SMTP_USER') ?: 'kevin.lokoka@prouvetech.fr';
+$smtp_pass   = getenv('PROUVETECH_SMTP_PASS') ?: '';
 $from_name   = 'ProuveTech Beta';
-$subject     = "Nouvelle inscription bêta ProuveTech";
+$subject     = 'Nouvelle inscription bêta ProuveTech';
 
 $message = "
 Une nouvelle inscription à la bêta :
@@ -145,11 +147,29 @@ Une nouvelle inscription à la bêta :
 📅 Date : " . date('Y-m-d H:i:s') . "
 ";
 
-$headers  = "From: $from_name <$from_email>\r\n";
-$headers .= "Reply-To: $email\r\n";
-$headers .= "Content-Type: text/plain; charset=utf-8";
+try {
+    $mailer = new PHPMailer(true);
+    $mailer->isSMTP();
+    $mailer->Host = 'smtp.hostinger.com';
+    $mailer->SMTPAuth = true;
+    $mailer->Username = $from_email;
+    $mailer->Password = $smtp_pass;
+    $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mailer->Port = 465;
+    $mailer->CharSet = 'UTF-8';
+    $mailer->setFrom($from_email, $from_name);
+    $mailer->addAddress($admin_email);
+    $mailer->addReplyTo($email);
+    $mailer->Subject = $subject;
+    $mailer->Body = $message;
+    $mailer->send();
+} catch (Exception $e) {
+    error_log('Erreur SMTP: ' . $e->getMessage());
+}
 
-mail($admin_email, $subject, $message, $headers);
+// Réponse au frontend
+http_response_code(200);
+echo json_encode(['success' => true, 'message' => 'Inscription réussie !']);
 
 exit;
 ?>

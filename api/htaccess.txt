@@ -1,8 +1,0 @@
-# Autoriser uniquement subscribe.php et logs
-<Files "subscribe.php">
-    Require all granted
-</Files>
-
-<Files "error_log">
-    Require all denied
-</Files>
